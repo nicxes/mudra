@@ -77,22 +77,22 @@
               <div class="grid gap-5 mb-8">
                 <div>
                   <label for="fullname" class="font-inter text-sm mb-[10px] block">Nombre y Apellido</label>
-                  <input type="text" name="fullname" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="fullname" value="Paco Nicolas Miranda" required>
+                  <input type="text" name="fullname" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="fullname" required>
                 </div>
 
                 <div>
                   <label for="dni" class="font-inter text-sm mb-[10px] block">DNI</label>
-                  <input type="number" name="dni" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="dni" value="39829829" required>
+                  <input type="number" name="dni" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="dni" required>
                 </div>
 
                 <div>
                   <label for="email" class="font-inter text-sm mb-[10px] block">Correo electrónico</label>
-                  <input type="email" name="email" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="email" value="paconicolasmiranda@gmail.com" required>
+                  <input type="email" name="email" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="email" required>
                 </div>
 
                 <div>
                   <label for="tel" class="font-inter text-sm mb-[10px] block">Teléfono</label>
-                  <input type="tel" name="tel" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="tel" value="1122698664" required>
+                  <input type="tel" name="tel" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="tel" required>
                 </div>
               </div>
 
