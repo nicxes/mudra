@@ -63,10 +63,10 @@
         <div class="bg-white py-7 md:py-10 px-4 md:px-7 rounded-lg shadow flex items-center">
           
           @if (session('success'))
-            <div class="text-center">
+            <div class="text-center py-32">
               <h3 class="text-2xl font-medium">¡Listo, {{ session('success') }}!</h3>
               <p class="text-lg font-medium mt-4 mb-8">En unos momentos te llegará un correo electrónico con tu credencial.</p>
-              <a href="" class="bg-[#B8D9E3] py-3 px-11 font-semibold uppercase rounded-lg">Ver todos los beneficios</a>
+              <a href="" class="bg-[#B8D9E3] py-3 md:px-11 font-semibold uppercase rounded-lg block">Ver todos los beneficios</a>
             </div>
           @else
             <form action="/send" method="POST" class="w-full" id="form">
