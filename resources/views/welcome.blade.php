@@ -34,69 +34,90 @@
 </head>
 <body>
   
-  <header class="relative bg-[url('images/background.png')] bg-cover min-h-screen min-w-full py-20 flex items-center">
-    <div class="container mx-auto">
+  <header class="relative bg-[url('images/background.png')] bg-cover min-h-screen min-w-full py-10 md:py-20 flex items-center">
+    <div class="container mx-auto px-6">
       
-      <div class="grid md:grid-cols-[auto_440px]">
+      <div class="grid md:grid-cols-[auto_440px] gap-10">
         <div class="text-white pt-6">
           <div class="flex items-center mb-8">
             <div class="mr-4">
-              <img src="/images/logo.png">
+              <img src="/images/logo.png" class="h-[50px] w-[50px]">
             </div>
 
-            <h1 class="font-montserrat text-[38px] font-semibold">
+            <h1 class="font-montserrat text-2xl md:text-[38px] font-semibold">
               Comunidad Mudra
             </h1>
           </div>
 
-          <h2 class="font-inter text-2xl mb-7">Suscribite para disfrutar de <b>beneficios exclusivos.</b></h2>
-          <hr class="border-0 w-4 h-[2px] bg-white/40 mb-8">
+          <h2 class="font-inter text-xl md:text-2xl mb-6 md:mb-7">Suscribite para disfrutar de <b>beneficios exclusivos.</b></h2>
+          <hr class="border-0 w-4 h-[2px] bg-white/40 mb-6 md:mb-8">
           <p class="font-inter text-xl font-medium mb-8">¡Es muy fácil!</p>
         
-          <ol class="list-none p-0 m-0 font-inter text-lg grid gap-11">
-            <li>Completá el formulario con tus datos.</li>
-            <li>Recibí la credencial por mail.</li>
-            <li>Guardala en tu celular ¡Y listo! Ya podés disfrutar de los beneficios.</li>
+          <ol class="list-none p-0 m-0 font-inter text-sm md:text-lg">
+            <li class="flex items-center mb-5">Completá el formulario con tus datos.</li>
+            <li class="flex items-center mb-5">Recibí la credencial por mail.</li>
+            <li class="flex items-center">Guardala en tu celular ¡Y listo! Ya podés disfrutar de los beneficios.</li>
           </ol>
         </div>
 
-        <div>
-          <form class="bg-white py-10 px-7 rounded-lg shadow">
-            <h3 class="font-inter text-lg font-medium mb-7">Cargá tus datos para recibir tu credencial</h3>
-            
-            <div class="grid gap-5 mb-8">
-              <div>
-                <label for="name" class="font-inter text-sm mb-[10px] block">Nombre y Apellido</label>
-                <input type="text" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="name">
-              </div>
-
-              <div>
-                <label for="name" class="font-inter text-sm mb-[10px] block">DNI</label>
-                <input type="number" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="name">
-              </div>
-
-              <div>
-                <label for="name" class="font-inter text-sm mb-[10px] block">Correo electrónico</label>
-                <input type="email" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="name">
-              </div>
-
-              <div>
-                <label for="name" class="font-inter text-sm mb-[10px] block">Teléfono</label>
-                <input type="tel" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="name">
-              </div>
+        <div class="bg-white py-7 md:py-10 px-4 md:px-7 rounded-lg shadow flex items-center">
+          
+          @if (session('success'))
+            <div class="text-center">
+              <h3 class="text-2xl font-medium">¡Listo, {{ session('success') }}!</h3>
+              <p class="text-lg font-medium mt-4 mb-8">En unos momentos te llegará un correo electrónico con tu credencial.</p>
+              <a href="" class="bg-[#B8D9E3] py-3 px-11 font-semibold uppercase rounded-lg">Ver todos los beneficios</a>
             </div>
+          @else
+            <form action="/send" method="POST" class="w-full" id="form">
+              @method('POST')
+              @csrf
+              <h3 class="font-inter text-lg font-medium mb-7">Cargá tus datos para recibir tu credencial</h3>
+              
+              <div class="grid gap-5 mb-8">
+                <div>
+                  <label for="fullname" class="font-inter text-sm mb-[10px] block">Nombre y Apellido</label>
+                  <input type="text" name="fullname" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="fullname" value="Paco Nicolas Miranda" required>
+                </div>
 
-            <div>
-              <button type="submit" class="text-[#1E1E1E] bg-[#B8D9E3] font-inter font-semibold uppercase py-3 rounded-lg w-full">
-                Enviar
-              </button>
-            </div>
-          </form>
+                <div>
+                  <label for="dni" class="font-inter text-sm mb-[10px] block">DNI</label>
+                  <input type="number" name="dni" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="dni" value="39829829" required>
+                </div>
+
+                <div>
+                  <label for="email" class="font-inter text-sm mb-[10px] block">Correo electrónico</label>
+                  <input type="email" name="email" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="email" value="paconicolasmiranda@gmail.com" required>
+                </div>
+
+                <div>
+                  <label for="tel" class="font-inter text-sm mb-[10px] block">Teléfono</label>
+                  <input type="tel" name="tel" class="text-[#1E1E1E] bg-[#E5E5E5] font-medium border-0 rounded-lg w-full block" id="tel" value="1122698664" required>
+                </div>
+              </div>
+
+              <div>
+                <button type="submit" class="text-[#1E1E1E] bg-[#B8D9E3] font-inter font-semibold uppercase py-3 rounded-lg w-full disabled:opacity-50" id="submit">
+                  Enviar
+                </button>
+              </div>
+            </form>
+          @endif
         </div>
       </div>
 
     </div>
   </header>
+
+  <script>
+    function send(event) {
+      var button = document.getElementById('submit');
+      button.setAttribute("disabled", "")
+    }
+
+    var form = document.getElementById('form');
+    form.addEventListener('submit', send);
+  </script>
 
 </body>
 </html>

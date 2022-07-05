@@ -19,25 +19,27 @@ ol:before {
 }
 
 ol li {
+  height: 31px;
   counter-increment: step-counter;
+  padding-left: 46px;
 }
 
 ol li::before {
   content: counter(step-counter);
 
   color: #919191;
+  font-size: 18px;
   background: #fff;
   border-radius: 8px;
 
   width: 31px;
   height: 31px;
 
-  position: relative;
+  position: absolute;
+  left: 0px;
   z-index: 2;
 
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
-  margin-right: 15px;
 }
