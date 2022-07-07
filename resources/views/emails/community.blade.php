@@ -385,7 +385,7 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p style="font-size: 20px; text-align: center; max-width: 416px; margin: 0 auto 20px auto;">Te recomendamos hacer un screenshot de este correo para poder mostrar tu credencial en los comercios adheridos.</p>
+                        <p style="font-size: 20px; text-align: center; max-width: 416px; margin: 0 auto 20px auto;">Te recomendamos hacer una captura de pantalla de este correo para poder mostrar tu credencial en los comercios adheridos.</p>
                         <hr style="border: 1px solid #B8D9E3; max-width: 41px; margin: 0 auto;">
                         <p style="color: #92ADB6; font-size: 20px; text-align: center; max-width: 416px; margin: 20px auto 0 auto;">¿Tenés alguna duda? ¡Contactanos por WhatsApp al 2234232900!</p>
                       </td>
