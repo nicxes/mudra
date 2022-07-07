@@ -362,7 +362,7 @@
                       <td>
                         <p style="font-size: 24px; text-align: center;">¡Hola, {{ $data['firstname'] }}! 👋</p>
                         <p style="font-size: 20px; text-align: center; max-width: 416px; margin: 0 auto;">Te acercamos tu credencial virtual para disfrutar de los beneficios exclusivos de la <b>Comunidad Mudra</b>.</p>
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="background: #EBFAFF; margin: 40px 0; padding: 35px 0;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="background: #EBFAFF; margin: 40px 0; padding: 35px;">
                           <tbody>
                             <tr>
                               <td align="center">
