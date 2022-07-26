@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\FormController;
-
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +27,4 @@ Route::get('/', function () {
 });
 
 Route::post('/send', [FormController::class, 'send']);
+Route::get('/contacts/export/', [ContactController::class, 'export']);

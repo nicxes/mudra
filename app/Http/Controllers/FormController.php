@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\FormMailable;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Contact;
 
 class FormController extends Controller
 {
@@ -25,9 +26,14 @@ class FormController extends Controller
             'message' => $request->message,
         ];
 
-        $to = $request->email;
+        $contact = Contact::where('dni', $request->dni)->first();
+
+        if (!$contact) {
+            Contact::create($data);
+        }
+
         $email = new FormMailable($data);
-        Mail::to($to)->send($email);
+        Mail::to($request->email)->send($email);
 
         return redirect('/')->with('success', $data['firstname']);
     }
